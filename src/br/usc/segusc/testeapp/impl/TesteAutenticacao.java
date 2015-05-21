@@ -11,14 +11,27 @@ public class TesteAutenticacao {
 		//testando a autenticacao por usuario e senha
 		Usuario user = new Usuario();
 		user.setLogin("richard");
-		user.setSenha("senha");
+		user.setSenha("senhaa");
 		try {
 			user = AutenticacaoFactory.getAutenticacaoServiceImpl().autenticar(user, TipoAutenticacao.SENHA);
 		} catch (AutenticacaoInvalidaException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
-		
+		try {
+			user = AutenticacaoFactory.getAutenticacaoServiceImpl().autenticar(user, TipoAutenticacao.SENHA);
+		} catch (AutenticacaoInvalidaException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
+		try {
+			user = AutenticacaoFactory.getAutenticacaoServiceImpl().autenticar(user, TipoAutenticacao.SENHA);
+		} catch (AutenticacaoInvalidaException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
+		System.out.println("Perfil: "+user.getPerfil().getNome());
+		System.out.println("Permissoes: "+user.getPermissao().getDescricao());
 	}
 
 }
