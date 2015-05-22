@@ -20,7 +20,6 @@ public class TesteAutenticacao {
 		System.out.println("Digite a opção de testes que deseja:");
 		System.out.println("1 - Autenticação por Usuário -  Senha");
 		System.out.println("2 - Autenticação por Biometria");
-		System.out.println("9 - Fim dos testes");
 		System.out.println("Escolha sua opção:");
 
 		opc = scn.nextInt();
@@ -64,8 +63,10 @@ public class TesteAutenticacao {
 				}
 			}
 		}
-		System.out.println("Perfil: "+user.getPerfil().getNome());
-		System.out.println("Permissoes: "+user.getPermissao().getDescricao());
+		if (opc==1 || opc==2){
+			System.out.println("Perfil: "+user.getPerfil().getNome());
+			System.out.println("Permissoes: "+user.getPermissao().getDescricao());
+		}
 	}
 
 }
